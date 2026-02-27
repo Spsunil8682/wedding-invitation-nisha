@@ -35,14 +35,14 @@ const Footer = () => {
             <div className="text-center">
               <Calendar className="mx-auto mb-3 text-yellow-400" size={24} />
               <h3 className="font-semibold text-lg mb-2">Wedding Date</h3>
-              <p className="text-gray-300">April 22, 2026</p>
+              <p className="text-gray-300">April 23, 2026</p>
             </div>
 
             <div className="text-center">
               <MapPin className="mx-auto mb-3 text-pink-400" size={24} />
               <h3 className="font-semibold text-lg mb-2">Venue</h3>
               <p className="text-gray-300">
-                Boliya Bujurg, Sunel, Jhalawat (Raj.)
+                Maa Ganga Complex Kundaliya Charandas, Garoth, Mandsaur (M.P)
               </p>
             </div>
 
@@ -70,11 +70,11 @@ const Footer = () => {
                 <div className="space-y-2 text-gray-300">
                   <div className="flex items-center justify-center gap-2">
                     <Phone size={16} />
-                    <span>7062006971</span>
+                    <span>7987352052</span>
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <Mail size={16} />
-                    <span>spsunil9928@gmail.com</span>
+                    <span>nisha225@gmail.com</span>
                   </div>
                 </div>
               </div>
