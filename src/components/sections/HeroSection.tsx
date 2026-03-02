@@ -87,7 +87,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.2 }}
         >
           <h1 className="font-lavishly text-[50px] md:text-8xl lg:text-9xl text-white drop-shadow-lg">
-            {coupleNames.groom} & {coupleNames.bride}
+            {coupleNames.bride} &{coupleNames.groom}
           </h1>
         </motion.div>
 

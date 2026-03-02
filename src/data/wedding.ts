@@ -169,28 +169,11 @@ export const galleryImages: GalleryImage[] = [
     alt: "Family bonding moments",
     category: "family",
   },
+
   {
     id: "img5",
-    src: "/images/family/5.jpg",
-    alt: "Family memories",
-    category: "family",
-  },
-  {
-    id: "img6",
     src: "/images/family/6.jpg",
     alt: "Family celebration moments",
-    category: "family",
-  },
-  {
-    id: "img7",
-    src: "/images/family/7.jpg",
-    alt: "Family togetherness",
-    category: "family",
-  },
-  {
-    id: "img8",
-    src: "/images/family/8.jpg",
-    alt: "Family love and joy",
     category: "family",
   },
 ];
