@@ -20,7 +20,7 @@ const Footer = () => {
         >
           {/* Main Heading */}
           <h2 className="font-dancing-script text-4xl md:text-5xl mb-4 text-yellow-300">
-            {coupleNames.groom} & {coupleNames.bride}
+            {coupleNames.bride} & {coupleNames.groom}
           </h2>
 
           <div className="flex items-center justify-center mb-8">
