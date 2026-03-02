@@ -5,9 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Heart, Camera } from "lucide-react";
 import Image from "next/image";
 import { galleryImages } from "@/data/wedding";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Button from "@/components/ui/Button";
 
 const GallerySection = () => {
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const openLightbox = (index: number) => {
@@ -44,7 +46,7 @@ const GallerySection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-playfair-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
-            Our Family
+            {t("gallery.title")}
           </h2>
           <div className="flex items-center justify-center mb-6">
             <div className="w-20 h-px bg-gradient-to-r from-transparent to-yellow-400"></div>
@@ -56,9 +58,7 @@ const GallerySection = () => {
             <div className="w-20 h-px bg-gradient-to-l from-transparent to-yellow-400"></div>
           </div>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Celebrating the bonds that unite us. These precious moments with our
-            beloved family members showcase the love, traditions, and joy that
-            make our wedding celebration complete.
+            {t("gallery.subtitle")}
           </p>
         </motion.div>
 
@@ -94,7 +94,9 @@ const GallerySection = () => {
                   <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
                       <Camera size={32} className="mx-auto mb-2" />
-                      <p className="text-sm font-medium">View Photo</p>
+                      <p className="text-sm font-medium">
+                        {t("gallery.viewPhoto")}
+                      </p>
                     </div>
                   </div>
 

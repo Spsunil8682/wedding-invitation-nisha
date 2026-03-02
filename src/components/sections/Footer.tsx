@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { Heart, Calendar, MapPin, Phone, Mail } from "lucide-react";
 import { coupleNames } from "@/data/wedding";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-gray-900 text-white py-16 px-4">
       <div className="max-w-6xl mx-auto">
@@ -34,16 +37,18 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
               <Calendar className="mx-auto mb-3 text-yellow-400" size={24} />
-              <h3 className="font-semibold text-lg mb-2">Wedding Date</h3>
-              <p className="text-gray-300">April 23, 2026</p>
+              <h3 className="font-semibold text-lg mb-2">
+                {t("footer.weddingDate")}
+              </h3>
+              <p className="text-gray-300">{t("hero.date")}</p>
             </div>
 
             <div className="text-center">
               <MapPin className="mx-auto mb-3 text-pink-400" size={24} />
-              <h3 className="font-semibold text-lg mb-2">Venue</h3>
-              <p className="text-gray-300">
-                Maa Ganga Complex Kundaliya Charandas, Garoth, Mandsaur (M.P)
-              </p>
+              <h3 className="font-semibold text-lg mb-2">
+                {t("footer.venue")}
+              </h3>
+              <p className="text-gray-300">{t("footer.venueAddress")}</p>
             </div>
 
             <div className="text-center">
@@ -52,20 +57,22 @@ const Footer = () => {
                 size={24}
                 fill="currentColor"
               />
-              <h3 className="font-semibold text-lg mb-2">Celebration</h3>
-              <p className="text-gray-300">Two Hearts, One Journey</p>
+              <h3 className="font-semibold text-lg mb-2">
+                {t("footer.celebration")}
+              </h3>
+              <p className="text-gray-300">{t("footer.twoHearts")}</p>
             </div>
           </div>
 
           {/* Contact Information */}
           <div className="bg-gray-800 rounded-2xl p-8 mb-8">
             <h3 className="font-playfair-display text-2xl font-bold mb-6">
-              Contact Us
+              {t("footer.contactUs")}
             </h3>
             <div className="flex justify-center">
               <div className="text-center">
                 <h4 className="font-semibold text-yellow-300 mb-2">
-                  Contact Information
+                  {t("footer.contactInfo")}
                 </h4>
                 <div className="space-y-2 text-gray-300">
                   <div className="flex items-center justify-center gap-2">
@@ -84,9 +91,7 @@ const Footer = () => {
           {/* Thank You Message */}
           <div className="mb-8">
             <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              Thank you for being part of our special day. Your love, support,
-              and presence mean everything to us as we begin this beautiful
-              journey together.
+              {t("footer.thankYou")}
             </p>
           </div>
 
@@ -98,9 +103,7 @@ const Footer = () => {
                 size={16}
                 fill="currentColor"
               />
-              <span className="text-gray-400">
-                Made with love for our special day
-              </span>
+              <span className="text-gray-400">{t("footer.madeWith")}</span>
               <Heart
                 className="text-pink-400 ml-2"
                 size={16}
@@ -108,8 +111,8 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-500 text-sm">
-              © 2026 {coupleNames.groom} & {coupleNames.bride}. All rights
-              reserved.
+              © 2026 {coupleNames.groom} & {coupleNames.bride}.{" "}
+              {t("footer.copyright")}
             </p>
           </div>
         </motion.div>

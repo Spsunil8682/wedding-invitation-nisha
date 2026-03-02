@@ -11,10 +11,12 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { RSVPFormData, RSVPFormErrors } from "@/types";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 
 const RSVPSection = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState<RSVPFormData>({
     name: "",
     phone: "",
@@ -29,11 +31,11 @@ const RSVPSection = () => {
     const newErrors: RSVPFormErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = t("rsvp.nameRequired");
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+      newErrors.phone = t("rsvp.phoneRequired");
     }
 
     setErrors(newErrors);
@@ -104,11 +106,10 @@ const RSVPSection = () => {
             <Card className="p-12">
               <CheckCircle className="mx-auto mb-6 text-green-500" size={64} />
               <h2 className="font-playfair-display text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                Thank You!
+                {t("rsvp.thankYou")}
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Your RSVP has been received successfully. We&apos;re so excited
-                to celebrate with you!
+                {t("rsvp.successMessage")}
               </p>
               <div className="flex items-center justify-center">
                 <Heart
@@ -144,7 +145,7 @@ const RSVPSection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-playfair-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
-            RSVP
+            {t("rsvp.title")}
           </h2>
           <div className="flex items-center justify-center mb-6">
             <div className="w-20 h-px bg-gradient-to-r from-transparent to-yellow-400"></div>
@@ -156,8 +157,7 @@ const RSVPSection = () => {
             <div className="w-20 h-px bg-gradient-to-l from-transparent to-yellow-400"></div>
           </div>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Please let us know if you&apos;ll be joining us for our special day.
-            Your presence would mean the world to us!
+            {t("rsvp.subtitle")}
           </p>
         </motion.div>
 
@@ -174,12 +174,12 @@ const RSVPSection = () => {
               <div>
                 <label className="form-label flex items-center gap-2">
                   <User size={18} />
-                  Full Name *
+                  {t("rsvp.fullName")}
                 </label>
                 <input
                   type="text"
                   className={`form-input ${errors.name ? "border-red-400" : ""}`}
-                  placeholder="Enter your full name"
+                  placeholder={t("rsvp.namePlaceholder")}
                   value={formData.name}
                   onChange={(e) => handleInputChange("name", e.target.value)}
                 />
@@ -192,12 +192,12 @@ const RSVPSection = () => {
               <div>
                 <label className="form-label flex items-center gap-2">
                   <Phone size={18} />
-                  Phone Number *
+                  {t("rsvp.phoneNumber")}
                 </label>
                 <input
                   type="tel"
                   className={`form-input ${errors.phone ? "border-red-400" : ""}`}
-                  placeholder="+91 98765 43210"
+                  placeholder={t("rsvp.phonePlaceholder")}
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
                 />
@@ -210,11 +210,11 @@ const RSVPSection = () => {
               <div>
                 <label className="form-label flex items-center gap-2">
                   <MessageSquare size={18} />
-                  Special Message (Optional)
+                  {t("rsvp.specialMessage")}
                 </label>
                 <textarea
                   className="form-input min-h-[120px] resize-y"
-                  placeholder="Share your wishes, dietary requirements, or any special requests..."
+                  placeholder={t("rsvp.messagePlaceholder")}
                   value={formData.message}
                   onChange={(e) => handleInputChange("message", e.target.value)}
                   rows={4}
@@ -233,12 +233,12 @@ const RSVPSection = () => {
                   {isSubmitting ? (
                     <div className="flex items-center justify-center gap-2">
                       <div className="loading-spinner w-5 h-5"></div>
-                      Submitting...
+                      {t("rsvp.submitting")}
                     </div>
                   ) : (
                     <div className="flex items-center justify-center gap-2">
                       <Send size={20} />
-                      Send RSVP
+                      {t("rsvp.submit")}
                     </div>
                   )}
                 </Button>
@@ -257,12 +257,9 @@ const RSVPSection = () => {
         >
           <div className="bg-gradient-to-r from-yellow-50 to-pink-50 rounded-2xl p-6 border border-yellow-100">
             <h3 className="font-playfair-display text-xl font-bold text-gray-800 mb-2">
-              Need Help?
+              {t("rsvp.needHelp")}
             </h3>
-            <p className="text-gray-600 text-sm">
-              If you have any questions or need assistance with your RSVP,
-              please don&apos;t hesitate to contact us directly.
-            </p>
+            <p className="text-gray-600 text-sm">{t("rsvp.helpText")}</p>
           </div>
         </motion.div>
       </div>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Dancing_Script, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/ui/LanguageToggle";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -69,7 +71,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${dancingScript.variable} ${playfairDisplay.variable} antialiased`}
       >
-        <div className="min-h-screen bg-gradient-romantic">{children}</div>
+        <LanguageProvider>
+          <LanguageToggle />
+          <div className="min-h-screen bg-gradient-romantic">{children}</div>
+        </LanguageProvider>
       </body>
     </html>
   );

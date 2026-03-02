@@ -90,35 +90,107 @@ export const weddingEvents: WeddingEvent[] = [
   },
 ];
 
+// Date translations
+export const dateTranslations = {
+  en: {
+    "18 April 2026": "18 April 2026",
+    "19 April 2026": "19 April 2026",
+    "21 April 2026": "21 April 2026",
+    "22 April 2026": "22 April 2026",
+    "23 April 2026": "23 April 2026",
+    "24 April 2026": "24 April 2026",
+  },
+  hi: {
+    "18 April 2026": "18 अप्रैल 2026",
+    "19 April 2026": "19 अप्रैल 2026",
+    "21 April 2026": "21 अप्रैल 2026",
+    "22 April 2026": "22 अप्रैल 2026",
+    "23 April 2026": "23 अप्रैल 2026",
+    "24 April 2026": "24 अप्रैल 2026",
+  },
+};
+
+// Time translations
+export const timeTranslations = {
+  en: {
+    "7:00 PM": "7:00 PM",
+    "8:00 AM": "8:00 AM",
+    "11:00 AM": "11:00 AM",
+    "8:00 PM": "8:00 PM",
+    "5:00 PM": "5:00 PM",
+    "3:00 AM": "3:00 AM",
+  },
+  hi: {
+    "7:00 PM": "शाम 7:00 बजे",
+    "8:00 AM": "सुबह 8:00 बजे",
+    "11:00 AM": "सुबह 11:00 बजे",
+    "8:00 PM": "शाम 8:00 बजे",
+    "5:00 PM": "शाम 5:00 बजे",
+    "3:00 AM": "सुबह 3:00 बजे",
+  },
+};
+
+// Location translations
+export const locationTranslations = {
+  en: {
+    " Kundaliya Charandas": " Kundaliya Charandas",
+    "Maa ganga complex Kundaliya Charandas":
+      "Maa ganga complex Kundaliya Charandas",
+  },
+  hi: {
+    " Kundaliya Charandas": " कुंडलिया चरणदास",
+    "Maa ganga complex Kundaliya Charandas":
+      "माँ गंगा कॉम्प्लेक्स कुंडलिया चरणदास",
+  },
+};
+
 export const galleryImages: GalleryImage[] = [
   {
     id: "img1",
-    src: "/images/family/IMG_2081.jpg",
+    src: "/images/family/1.jpg",
     alt: "Family portrait",
     category: "family",
   },
   {
     id: "img2",
-    src: "/images/family/nisha-sunil.webp",
+    src: "/images/family/2.jpg",
     alt: "Family gathering moments",
     category: "family",
   },
   {
     id: "img3",
-    src: "/images/family/3d1047db-9062-40db-9443-6515c61e37dc.jpg",
+    src: "/images/family/3.jpg",
     alt: "Family celebration",
     category: "family",
   },
   {
     id: "img4",
-    src: "/images/family/b155c015-43ea-415b-b536-164fd02188d2.jpg",
+    src: "/images/family/4.webp",
     alt: "Family bonding moments",
     category: "family",
   },
   {
     id: "img5",
-    src: "/images/family/d5a09140-9493-454c-8a6e-cef7d27cd97f.jpg",
+    src: "/images/family/5.jpg",
     alt: "Family memories",
+    category: "family",
+  },
+  {
+    id: "img6",
+    src: "/images/family/6.jpg",
+    alt: "Family celebration moments",
+    category: "family",
+  },
+  {
+    id: "img7",
+    src: "/images/family/7.jpg",
+    alt: "Family togetherness",
+    category: "family",
+  },
+  {
+    id: "img8",
+    src: "/images/family/8.jpg",
+    alt: "Family love and joy",
     category: "family",
   },
 ];

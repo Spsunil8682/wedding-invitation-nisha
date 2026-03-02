@@ -2,11 +2,19 @@
 
 import { motion } from "framer-motion";
 import { MapPin, Clock, Calendar, Heart } from "lucide-react";
-import { weddingEvents } from "@/data/wedding";
+import {
+  weddingEvents,
+  dateTranslations,
+  timeTranslations,
+  locationTranslations,
+} from "@/data/wedding";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 
 const EventsSection = () => {
+  const { t, language } = useLanguage();
+
   const handleGetDirections = (mapUrl: string | undefined) => {
     if (mapUrl) {
       window.open(mapUrl, "_blank");
@@ -25,7 +33,7 @@ const EventsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-playfair-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
-            Wedding Programs
+            {t("events.title")}
           </h2>
           <div className="flex items-center justify-center mb-6">
             <div className="w-20 h-px bg-gradient-to-r from-transparent to-yellow-400"></div>
@@ -37,9 +45,7 @@ const EventsSection = () => {
             <div className="w-20 h-px bg-gradient-to-l from-transparent to-yellow-400"></div>
           </div>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Join us for a series of beautiful ceremonies and celebrations as we
-            begin our journey together. Each event is special and we would love
-            to have you there.
+            {t("events.subtitle")}
           </p>
         </motion.div>
 
@@ -73,10 +79,10 @@ const EventsSection = () => {
                   {/* Event Header */}
                   <div className="mb-6">
                     <h3 className="font-playfair-display text-2xl font-bold text-gray-800 mb-3 group-hover:text-yellow-700 transition-colors duration-300">
-                      {event.name}
+                      {t(`event.${event.id}.name`)}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      {event.description}
+                      {t(`event.${event.id}.description`)}
                     </p>
                   </div>
 
@@ -87,7 +93,9 @@ const EventsSection = () => {
                         <Calendar className="text-white" size={16} />
                       </div>
                       <span className="font-semibold text-gray-800">
-                        {event.date}
+                        {dateTranslations[language][
+                          event.date as keyof (typeof dateTranslations)[typeof language]
+                        ] || event.date}
                       </span>
                     </div>
 
@@ -96,7 +104,9 @@ const EventsSection = () => {
                         <Clock className="text-white" size={16} />
                       </div>
                       <span className="font-semibold text-gray-800">
-                        {event.time}
+                        {timeTranslations[language][
+                          event.time as keyof (typeof timeTranslations)[typeof language]
+                        ] || event.time}
                       </span>
                     </div>
 
@@ -105,7 +115,9 @@ const EventsSection = () => {
                         <MapPin className="text-white" size={16} />
                       </div>
                       <div className="font-semibold text-gray-800 leading-relaxed">
-                        {event.location}
+                        {locationTranslations[language][
+                          event.location as keyof (typeof locationTranslations)[typeof language]
+                        ] || event.location}
                       </div>
                     </div>
                   </div>
@@ -123,7 +135,7 @@ const EventsSection = () => {
                         size={18}
                         className="group-hover/btn:animate-bounce"
                       />
-                      <span>Get Directions</span>
+                      <span>{t("events.viewLocation")}</span>
                       <div className="w-2 h-2 bg-white/30 rounded-full group-hover/btn:animate-ping"></div>
                     </motion.button>
                   </div>
@@ -147,11 +159,9 @@ const EventsSection = () => {
             className="text-center mb-8"
           >
             <h3 className="font-playfair-display text-2xl font-bold text-gray-800 mb-4">
-              Event Timeline
+              {t("events.timeline")}
             </h3>
-            <p className="text-gray-600">
-              Here&apos;s a quick overview of our celebration schedule
-            </p>
+            <p className="text-gray-600">{t("events.timelineSubtitle")}</p>
           </motion.div>
 
           <div className="relative">
@@ -189,15 +199,26 @@ const EventsSection = () => {
                     <div className="relative z-10">
                       <div className="flex items-center gap-2 mb-3">
                         <h4 className="font-playfair-display text-xl font-bold text-gray-800">
-                          {event.name}
+                          {t(`event.${event.id}.name`)}
                         </h4>
                       </div>
                       <div className="text-sm text-gray-600 mb-1">
-                        <span className="font-medium">{event.date}</span> at{" "}
-                        <span className="font-medium">{event.time}</span>
+                        <span className="font-medium">
+                          {dateTranslations[language][
+                            event.date as keyof (typeof dateTranslations)[typeof language]
+                          ] || event.date}
+                        </span>{" "}
+                        {language === "hi" ? "को" : "at"}{" "}
+                        <span className="font-medium">
+                          {timeTranslations[language][
+                            event.time as keyof (typeof timeTranslations)[typeof language]
+                          ] || event.time}
+                        </span>
                       </div>
                       <div className="text-sm text-gray-500">
-                        {event.location}
+                        {locationTranslations[language][
+                          event.location as keyof (typeof locationTranslations)[typeof language]
+                        ] || event.location}
                       </div>
                     </div>
 
@@ -220,12 +241,10 @@ const EventsSection = () => {
         >
           <div className="bg-gradient-to-r from-yellow-50 to-pink-50 rounded-2xl p-8 border border-yellow-100">
             <h3 className="font-playfair-display text-xl md:text-2xl font-bold text-gray-800 mb-4">
-              Important Note
+              {t("events.importantNote")}
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Please arrive 15-30 minutes before each ceremony begins.
-              Traditional attire is encouraged but not mandatory. For any
-              questions about the events, feel free to contact us.
+              {t("events.noteText")}
             </p>
           </div>
         </motion.div>
