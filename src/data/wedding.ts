@@ -93,33 +93,32 @@ export const weddingEvents: WeddingEvent[] = [
 export const galleryImages: GalleryImage[] = [
   {
     id: "img1",
-    src: "/images/IMG_4062.jpg",
-    alt: "Beautiful wedding moment",
-    category: "engagement",
-  },
-  {
-    id: "img2",
-    src: "/images/IMG_4188.jpg",
-    alt: "Romantic couple portrait",
-    category: "prewedding",
-  },
-  {
-    id: "img3",
-    src: "/images/IMG_4191.jpg",
-    alt: "Candid wedding moments",
-    category: "prewedding",
-  },
-
-  {
-    id: "img5",
-    src: "/images/IMG_4719.jpg",
-    alt: "Wedding ceremony highlights",
+    src: "/images/family/IMG_2081.jpg",
+    alt: "Family portrait",
     category: "family",
   },
   {
-    id: "img6",
-    src: "/images/IMG_4720.jpg",
+    id: "img2",
+    src: "/images/family/nisha-sunil.webp",
     alt: "Family gathering moments",
+    category: "family",
+  },
+  {
+    id: "img3",
+    src: "/images/family/3d1047db-9062-40db-9443-6515c61e37dc.jpg",
+    alt: "Family celebration",
+    category: "family",
+  },
+  {
+    id: "img4",
+    src: "/images/family/b155c015-43ea-415b-b536-164fd02188d2.jpg",
+    alt: "Family bonding moments",
+    category: "family",
+  },
+  {
+    id: "img5",
+    src: "/images/family/d5a09140-9493-454c-8a6e-cef7d27cd97f.jpg",
+    alt: "Family memories",
     category: "family",
   },
 ];

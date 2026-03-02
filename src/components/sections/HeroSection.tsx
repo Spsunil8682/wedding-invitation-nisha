@@ -39,7 +39,7 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div
-          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          className="w-full h-full bg-cover bg-center lg:bg-contain bg-no-repeat"
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/IMG_4188.jpg')`,
           }}
@@ -95,7 +95,7 @@ const HeroSection = () => {
           className="flex items-center justify-center "
         >
           <div className="w-16 h-px bg-gradient-to-r from-transparent to-white"></div>
-          <Heart className="mx-4 text-white" size={32} fill="currentColor" />
+          <Heart className="mx-4 text-red" size={32} fill="#FF69B4" />
           <div className="w-16 h-px bg-gradient-to-l from-transparent to-white"></div>
         </motion.div>
 

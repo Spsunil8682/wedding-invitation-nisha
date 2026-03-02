@@ -44,7 +44,7 @@ const GallerySection = () => {
           className="text-center mb-16"
         >
           <h2 className="font-playfair-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
-            Our Gallery
+            Our Family
           </h2>
           <div className="flex items-center justify-center mb-6">
             <div className="w-20 h-px bg-gradient-to-r from-transparent to-yellow-400"></div>
@@ -56,8 +56,9 @@ const GallerySection = () => {
             <div className="w-20 h-px bg-gradient-to-l from-transparent to-yellow-400"></div>
           </div>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Capturing beautiful moments from our journey together. Each photo
-            tells a story of love, laughter, and the joy we share.
+            Celebrating the bonds that unite us. These precious moments with our
+            beloved family members showcase the love, traditions, and joy that
+            make our wedding celebration complete.
           </p>
         </motion.div>
 
@@ -79,13 +80,13 @@ const GallerySection = () => {
                 onClick={() => openLightbox(index)}
               >
                 {/* Image Container */}
-                <div className="relative aspect-square overflow-hidden">
+                <div className="relative overflow-hidden max-h-[420px]">
                   <Image
                     src={image.src}
                     alt={image.alt}
                     width={400}
                     height={400}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-110"
                     unoptimized
                   />
 
