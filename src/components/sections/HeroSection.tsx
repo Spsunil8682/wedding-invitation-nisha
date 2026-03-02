@@ -5,14 +5,17 @@ import { motion } from "framer-motion";
 import { Heart, ChevronDown } from "lucide-react";
 import { calculateTimeLeft } from "@/lib/utils";
 import { weddingDate, coupleNames } from "@/data/wedding";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Button from "@/components/ui/Button";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(weddingDate));
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -105,7 +108,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.7 }}
           className="font-playfair-display text-lg md:text-2xl lg:text-3xl mb-2 text-white drop-shadow-md"
         >
-          Two Hearts, One Journey
+          {t("hero.subtitle")}
         </motion.p>
 
         <motion.div
@@ -115,10 +118,13 @@ const HeroSection = () => {
           className="mb-8"
         >
           <p className="text-base md:text-xl mb-2 text-white">
-            We&apos;re getting married on
+            {t("hero.countdown")}
           </p>
           <p className="font-playfair-display text-xl md:text-3xl font-bold text-white drop-shadow-md">
-            April 23, 2026
+            {t("hero.date")}
+          </p>
+          <p className="text-base md:text-lg text-white mt-1">
+            {t("hero.location")}
           </p>
         </motion.div>
 
@@ -130,10 +136,10 @@ const HeroSection = () => {
           className="grid grid-cols-4 gap-4 md:gap-8 mb-12 max-w-2xl mx-auto"
         >
           {[
-            { label: "Days", value: timeLeft.days },
-            { label: "Hours", value: timeLeft.hours },
-            { label: "Minutes", value: timeLeft.minutes },
-            { label: "Seconds", value: timeLeft.seconds },
+            { label: t("hero.days"), value: timeLeft.days },
+            { label: t("hero.hours"), value: timeLeft.hours },
+            { label: t("hero.minutes"), value: timeLeft.minutes },
+            { label: t("hero.seconds"), value: timeLeft.seconds },
           ].map((item) => (
             <div key={item.label} className="text-center">
               <motion.div
